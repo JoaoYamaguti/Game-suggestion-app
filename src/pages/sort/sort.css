@@ -12,7 +12,7 @@
 .selectSet{
     display: flex;
     flex-flow: row nowrap;
-    
+    gap: .3rem;
 }
 
 .createPoll select {
@@ -21,6 +21,26 @@
     padding: .4rem;
 }
 
-.createPoll button{
-    flex: 0 0 10%;
+.cancel{    
+    flex: 0 0 5%;
+    background-image: url('../../icons/trash.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    cursor: pointer; 
 }
+
+.cancel:hover{
+    background-color: white;
+    transition: 200ms ;
+}
+
+.createPoll .add{
+    max-inline-size: 5rem;
+    border: 0px;
+    background-color: initial;
+    color: white;
+    cursor: pointer;
+}
+

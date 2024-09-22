@@ -9,13 +9,14 @@ export function Sort() {
   return (
     <div className="container">
 
-      <Header/>
+      <Header />
 
       <main>
-            <CreatePoll/>
+        <CreatePoll />
+
+
       </main>
 
-      <Footer/>
     </div>
   )
 }

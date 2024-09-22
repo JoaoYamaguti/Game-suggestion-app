@@ -2,34 +2,57 @@ import { useState } from "react"
 
 // import { } from "../../icons/trash.svg";
 
+const list = [
+    {
+        'name': 'GTA V',
+    },
+    {
+        'name': 'Red Dead Redemption II',
+    },
+    {
+        'name': 'Black'
+    }
+]
+
 export function CreatePoll() {
 
-    let Select = ({ setGames }) => (
+    const [games, setGames] = useState(['', ''])
+
+    let Select = ({ index, value }) => (
         <div className="selectSet">
-            <select name="game" id="game">
+            <select name="game" id="game" value={value} onChange={(e) => {
+                games[index] = e.target.value
+                setGames([...games])
+            }}>
                 <option value=""></option>
-                <option value="">GTA V</option>
+                {
+                    list.map(e => (
+                        <option value={e.name}>
+                            <div type="button" className="cancel" />
+                            {e.name}
+                        </option>
+                    ))
+                }
             </select>
-            <button type="button">
-            </button>
-                <img src="../../icons/cancelar.png" alt="cancel" />
+            {index >1 && <div type="button" className="cancel" onClick={() => {
+                games.splice(index, 1)
+                setGames([...games])
+            }} />}
         </div>
     )
-
-    const [games, setGames] = useState([''])
 
     return (
         <form className="createPoll">
             <fieldset>
                 <label htmlFor="games">Choose games:</label>
-                <Select />
 
-                <Select />
-
-                {games.map((game, index) => {
-                    return <Select key={index} />
+                {games.length > 0 && games.map((game, index) => {
+                    console.log(game)
+                    return <Select key={index} index={index} value={game} />
                 })}
-                <button type="button" onClick={() => setGames([...games, ''])}>+ Add more Game</button>
+                <button type="button" className="add" onClick={() => {
+                    setGames([...games, ''])
+                }}>+ Add More</button>
             </fieldset>
         </form>
     )
