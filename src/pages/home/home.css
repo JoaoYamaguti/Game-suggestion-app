@@ -1,0 +1,26 @@
+.home {
+  block-size: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  place-items: center;
+}
+
+main section{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+main h2{
+  text-align: center;
+}
+
+.btns{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+

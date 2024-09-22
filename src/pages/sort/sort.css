@@ -1,0 +1,26 @@
+.createPoll{
+    padding: .5rem;
+}
+.createPoll fieldset{
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+
+.selectSet{
+    display: flex;
+    flex-flow: row nowrap;
+    
+}
+
+.createPoll select {
+    flex: 1;
+    line-height: 1.5;
+    padding: .4rem;
+}
+
+.createPoll button{
+    flex: 0 0 10%;
+}
